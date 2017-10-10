@@ -3,4 +3,6 @@
   <p>Hello, <%= current_user.name %></p>
 <% else %>
   <%= link_to "Login With GitHub", "/auth/github" %>
-<% end %>
+<% end %></br>
+
+<%= link_to "Logout", logout_path, method: :delete %>
