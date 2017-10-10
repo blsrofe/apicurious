@@ -1,0 +1,6 @@
+<h1>home</h1>
+<% if current_user %>
+  <p>Hello, <%= current_user.name %></p>
+<% else %>
+  <%= link_to "Login With GitHub", "/auth/github" %>
+<% end %>
