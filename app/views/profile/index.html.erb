@@ -1,0 +1,11 @@
+<h1>Profile</h1>
+
+<ul class="member">
+  <li class="name">Email: <%= @member[:email] %></li>
+  <li class="role">Location: <%= @member[:location] %></li>
+
+  <li class="district">Followers: <%= @member[:followers] %></li>
+  <li class="district">Following: <%= @member[:following] %></li>
+</ul>
+
+<%= link_to "Logout", logout_path, method: :delete %>
