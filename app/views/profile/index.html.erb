@@ -1,14 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-      1 of 3
+    <div class="col-3">
     </div>
-    <div class="col-6">
-      <p>Overview</p>
-      <p>Repositories</p>
+    <div class="col-8">
+      <p class="d-inline-block px-3">Overview</p>
+      <p class="d-inline-block px-3">Repositories <%= @all_repos.count %></p>
+      <p class="d-inline-block starred px-3">Stars <%= @starred_repos.count %></p>
+      <p class="d-inline-block followers px-3">Followers <%= @github_user.followers %></p>
+      <p class="d-inline-block following px-3">Following <%= @github_user.following %></p>
     </div>
     <div class="col">
-      3 of 3
     </div>
   </div>
   <div class="row">
@@ -20,32 +21,17 @@
       <p class="location"><%= @github_user.location %></p>
       <p class="email"><%= @github_user.email %></p>
     </div>
-    <div class="col 9">
-      <div class="card w-50">
+    <div class="col-9">
+      <div class="row">
+      <% @all_repos[0..5].each do |repo| %>
+      <div class="card col-md-6">
         <div class="card-block">
-          <h4 class="card-title">Card title</h4>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h4 class="card-title"><%= repo[:name] %></h4>
+          <h6 class="card-subtitle mb-2 text-muted"><%= repo[:language] %></h6>
         </div>
       </div>
-      <div class="card w-50">
-        <div class="card-block">
-          <h4 class="card-title">Card title</h4>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
+      <% end %>
+    </div>
     </div>
   </div>
 </div>
-
-
-<ul class="member">
-  <li class="followers">Followers: <%= @github_user.followers %></li>
-  <li class="following">Following: <%= @github_user.following %></li>
-  <li class="starred">Starred repos: <%= @starred_repos.count %></li>
-</ul>
-<% @all_repos[0..5].each do |repo| %>
-  <%= repo[:name] %>
-  <%= repo[:language] %>
-<%end %></br>
