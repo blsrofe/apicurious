@@ -16,6 +16,11 @@ class GithubService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def get_all_repos
+    response = @conn.get("/user/repos")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
   private
     attr_reader :conn
 end

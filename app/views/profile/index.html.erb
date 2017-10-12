@@ -1,13 +1,51 @@
-<h1>Profile</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col-6">
+      <p>Overview</p>
+      <p>Repositories</p>
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <img src="<%= @github_user.picture_url %>" class="profile_pic" height="220" width="220">
+      <h3 class="name"><%= @github_user.name %></h3>
+      <p class ="login_name"><%= @github_user.login_name %></p></br>
+      <p class="description"><%= @github_user.description %></p></br>
+      <p class="location"><%= @github_user.location %></p>
+      <p class="email"><%= @github_user.email %></p>
+    </div>
+    <div class="col 9">
+      <div class="card w-50">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card w-50">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<img src="<%= @github_user.picture_url %>" class="profile_pic" height="42" width="42">
+
 <ul class="member">
-  <li class="email">Email: <%= @github_user.email %></li>
-  <li class="location">Location: <%= @github_user.location %></li>
-
   <li class="followers">Followers: <%= @github_user.followers %></li>
   <li class="following">Following: <%= @github_user.following %></li>
-  <li class="starred">Starred repos: <%= @repos.count %></li>
+  <li class="starred">Starred repos: <%= @starred_repos.count %></li>
 </ul>
-
-<%= link_to "Logout", logout_path, method: :delete %>
+<% @all_repos[0..5].each do |repo| %>
+  <%= repo[:name] %>
+  <%= repo[:language] %>
+<%end %></br>

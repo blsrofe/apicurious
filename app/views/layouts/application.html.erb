@@ -40,7 +40,7 @@
           <% if current_user %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              (Insert pic)
+              <img src="<%= @github_user.picture_url %>" class="profile_pic" height="42" width="42">
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#">Signed in as </a>
@@ -49,7 +49,7 @@
               <a class="dropdown-item" href="#">Your gists</a>
               <a class="dropdown-item" href="#">Help</a>
               <a class="dropdown-item" href="#">Settings</a>
-              <a class="dropdown-item" href="#">Signout</a>
+              <a class="dropdown-item" <%= link_to "Sign Out", logout_path, method: "delete" %></a>
             </div>
             <% else %>
             <%= link_to "Login With GitHub", "/auth/github" %>

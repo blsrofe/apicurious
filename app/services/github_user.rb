@@ -4,7 +4,9 @@ class GithubUser
               :followers,
               :following,
               :email,
-              :picture_url
+              :picture_url,
+              :description,
+              :login_name
 
   def initialize(attributes = {})
     @name = attributes[:name]
@@ -13,5 +15,7 @@ class GithubUser
     @followers = attributes[:followers]
     @following = attributes[:following]
     @picture_url = attributes[:avatar_url]
+    @description = attributes[:bio]
+    @login_name = attributes[:login]
   end
 end
