@@ -16,22 +16,21 @@
     <div class="col-3">
       <img src="<%= @github_user.picture_url %>" class="profile_pic" height="220" width="220">
       <h3 class="name"><%= @github_user.name %></h3>
-      <p class ="login_name"><%= @github_user.login_name %></p></br>
-      <p class="description"><%= @github_user.description %></p></br>
+      <p class ="login_name text-muted"><%= @github_user.login_name %></p></br>
+      <p class="description text-muted"><%= @github_user.description %></p></br>
       <p class="location"><%= @github_user.location %></p>
-      <p class="email"><%= @github_user.email %></p>
+      <p class="email text-primary"><%= @github_user.email %></p>
     </div>
     <div class="col-9">
       <div class="row">
       <% @all_repos[0..5].each do |repo| %>
-      <div class="card col-md-6">
+      <div class="card col-md-5 m-1">
         <div class="card-block">
-          <h4 class="card-title"><%= repo[:name] %></h4>
+          <h4 class="card-text text-primary"><%= repo[:name] %></h4>
           <h6 class="card-subtitle mb-2 text-muted"><%= repo[:language] %></h6>
         </div>
       </div>
       <% end %>
-    </div>
     </div>
   </div>
 </div>

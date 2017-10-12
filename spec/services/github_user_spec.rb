@@ -7,12 +7,11 @@ describe GithubUser do
       location: "Denver",
       followers: 5,
       following: 2,
-      email: "someone@gmail.com",
-      picture_url: "www.picture.com"
+      avatar_url: "www.picture.com",
+      email: "someone@gmail.com"
     }
 
     github_user = GithubUser.new(attrs)
-
     expect(github_user.name).to eq("Becki Srofe")
     expect(github_user.location).to eq("Denver")
     expect(github_user.followers).to eq(5)
