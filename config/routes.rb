@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/profile', to: 'profile#index'
+  get '/all_repos', to: 'profile#all_repos'
+  get '/recent_commits', to: 'profile#recent_commits'
 end

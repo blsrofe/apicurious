@@ -24,11 +24,11 @@
     </div>
     <div class="col-9">
       <div class="row">
-      <% @all_repos[0..5].each do |repo| %>
+      <% @recent_commits.each do |commit| %>
       <div class="card col-md-5 m-1">
         <div class="card-block">
-          <h4 class="card-text text-primary"><%= repo[:name] %></h4>
-          <h6 class="card-subtitle mb-2 text-muted"><%= repo[:language] %></h6>
+          <h4 class="card-text text-primary"><%= commit.first%></h4>
+          <h6 class="card-text text-primary"><%= commit[1]%></h6>
         </div>
       </div>
       <% end %>
